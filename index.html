@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adityan.T.S - Full-Stack Developer</title>
+    <!-- Use Tailwind CSS for rapid styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts for "Inter" as the primary font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #F8FAFC;
+        }
+        .container {
+            max-width: 1024px;
+        }
+        .hero-text::after {
+            content: '|';
+            animation: blink-caret 0.75s step-end infinite;
+        }
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: #FB923C; }
+        }
+        /* Hide scrollbar for a cleaner look */
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none; /* IE and Edge */
+            scrollbar-width: none; /* Firefox */
+        }
+        .project-card:hover .project-overlay {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .modal {
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+    </style>
+</head>
+<body class="text-slate-900 leading-relaxed">
+    <!-- Sticky Header -->
+    <header class="sticky top-0 z-50 bg-[#1E293B] bg-opacity-95 backdrop-blur-sm shadow-md py-4">
+        <div class="container mx-auto flex justify-between items-center px-6 lg:px-8">
+            <a href="#" class="text-xl font-bold text-white">Adityan.T.S</a>
+            <nav class="space-x-4 text-white hidden md:block">
+                <a href="#about" class="hover:text-[#FB923C] transition-colors">About</a>
+                <a href="#projects" class="hover:text-[#FB923C] transition-colors">Projects</a>
+                <a href="#contact" class="hover:text-[#FB923C] transition-colors">Contact</a>
+            </nav>
+            <a href="#" class="bg-[#FB923C] text-white px-4 py-2 rounded-full font-semibold hover:bg-orange-600 transition-colors hidden md:block">Download Resume</a>
+            <button class="md:hidden text-white text-2xl">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="bg-[#1E293B] text-white py-12 md:py-24 flex items-center justify-center">
+        <div class="container mx-auto px-6 lg:px-8 text-center">
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold mb-4">
+                Hey there, I'm <span class="text-[#FB923C]">Adityan.T.S</span>
+            </h1>
+            <p class="text-xl sm:text-2xl font-light mb-8">
+                <span id="hero-typing-text" class="hero-text text-white"></span>
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6">
+                <a href="#projects" class="bg-[#FB923C] hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-full shadow-lg transition-transform transform hover:scale-105">View My Work</a>
+                <a href="#contact" class="border border-white hover:border-[#FB923C] text-white font-bold py-3 px-8 rounded-full transition-colors transform hover:scale-105">Let's Build Something</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-12 md:py-24 bg-[#F8FAFC]">
+        <div class="container mx-auto px-6 lg:px-8">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-[#1E293B]">The Human Behind the Code</h2>
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <!-- About Content -->
+                <div class="space-y-6">
+                    <p class="text-lg text-gray-700">Hey there! I'm Adityan.T.S – a passionate full-stack developer who loves turning wild ideas into pixel-perfect reality. Currently crushing my B.Tech, but I've been coding since before it was cool to have "developer" in your bio.</p>
+                    <p class="text-lg text-gray-700">My superpower? Building seamless web experiences that make users go "wow, that just works!" From crafting responsive frontends with React and Vue to architecting robust backends with Python and Django, I speak fluent code in multiple dialects.</p>
+                    <p class="text-lg text-gray-700">When I'm not debugging at 2 AM (okay, maybe I am), you'll find me exploring the latest web technologies, creating digital designs in Illustrator, or helping teams bring their visions to life through clear communication and solid project management.</p>
+                    <p class="text-lg text-gray-700">I believe great software isn't just about clean code – it's about solving real problems for real people. Ready to build something amazing together?</p>
+                </div>
+                <!-- Photo & Skills -->
+                <div class="flex flex-col items-center space-y-8">
+                    <div class="relative w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden shadow-xl border-4 border-white">
+                        <img src="https://placehold.co/256x256/64748B/FFFFFF?text=Adityan.T.S" alt="Adityan.T.S" class="w-full h-full object-cover">
+                    </div>
+                    <div class="w-full text-center">
+                        <h3 class="text-2xl font-bold mb-4 text-[#1E293B]">My Technical Toolbox</h3>
+                        <div class="flex flex-wrap justify-center gap-4">
+                            <span class="bg-slate-200 text-slate-700 px-4 py-2 rounded-full text-sm font-medium"><i class="fab fa-react mr-2"></i>React</span>
+                            <span class="bg-slate-200 text-slate-700 px-4 py-2 rounded-full text-sm font-medium"><i class="fab fa-vuejs mr-2"></i>Vue.js</span>
+                            <span class="bg-slate-200 text-slate-700 px-4 py-2 rounded-full text-sm font-medium"><i class="fab fa-python mr-2"></i>Python</span>
+                            <span class="bg-slate-200 text-slate-700 px-4 py-2 rounded-full text-sm font-medium"><i class="fas fa-database mr-2"></i>Django</span>
+                            <span class="bg-slate-200 text-slate-700 px-4 py-2 rounded-full text-sm font-medium"><i class="fab fa-js-square mr-2"></i>JavaScript</span>
+                            <span class="bg-slate-200 text-slate-700 px-4 py-2 rounded-full text-sm font-medium"><i class="fab fa-html5 mr-2"></i>HTML5</span>
+                            <span class="bg-slate-200 text-slate-700 px-4 py-2 rounded-full text-sm font-medium"><i class="fab fa-css3-alt mr-2"></i>CSS3</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-12 md:py-24 bg-[#1E293B] text-white">
+        <div class="container mx-auto px-6 lg:px-8">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Things I've Built</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project Card 1 -->
+                <div class="project-card bg-white text-slate-900 rounded-xl shadow-lg overflow-hidden transition-transform transform hover:scale-105 cursor-pointer" data-project='{"title": "Project Alpha", "description": "A collaborative task management application built with real-time updates.", "role": "Full-Stack Developer", "technologies": ["React", "Node.js", "Firebase", "Tailwind CSS"], "image": "https://placehold.co/400x300/F8FAFC/1E293B?text=Project+Alpha"}'>
+                    <img src="https://placehold.co/400x300/F8FAFC/1E293B?text=Project+Alpha" alt="Project Alpha" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Project Alpha</h3>
+                        <p class="text-sm text-gray-700 mb-4">A collaborative task management application built with real-time updates.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-orange-100 text-orange-600 text-xs px-2 py-1 rounded-full">React</span>
+                            <span class="bg-orange-100 text-orange-600 text-xs px-2 py-1 rounded-full">Node.js</span>
+                            <span class="bg-orange-100 text-orange-600 text-xs px-2 py-1 rounded-full">Firebase</span>
+                        </div>
+                        <div class="flex space-x-4">
+                            <a href="#" class="text-[#FB923C] hover:text-orange-600 transition-colors"><i class="fas fa-external-link-alt mr-1"></i> Live Demo</a>
+                            <a href="#" class="text-[#FB923C] hover:text-orange-600 transition-colors"><i class="fab fa-github mr-1"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project Card 2 -->
+                <div class="project-card bg-white text-slate-900 rounded-xl shadow-lg overflow-hidden transition-transform transform hover:scale-105 cursor-pointer" data-project='{"title": "Project Bravo", "description": "An e-commerce platform for selling unique digital art.", "role": "Frontend Developer", "technologies": ["Vue.js", "Express", "MongoDB"], "image": "https://placehold.co/400x300/F8FAFC/1E293B?text=Project+Bravo"}'>
+                    <img src="https://placehold.co/400x300/F8FAFC/1E293B?text=Project+Bravo" alt="Project Bravo" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Project Bravo</h3>
+                        <p class="text-sm text-gray-700 mb-4">An e-commerce platform for selling unique digital art.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-orange-100 text-orange-600 text-xs px-2 py-1 rounded-full">Vue.js</span>
+                            <span class="bg-orange-100 text-orange-600 text-xs px-2 py-1 rounded-full">Express</span>
+                            <span class="bg-orange-100 text-orange-600 text-xs px-2 py-1 rounded-full">MongoDB</span>
+                        </div>
+                        <div class="flex space-x-4">
+                            <a href="#" class="text-[#FB923C] hover:text-orange-600 transition-colors"><i class="fas fa-external-link-alt mr-1"></i> Live Demo</a>
+                            <a href="#" class="text-[#FB923C] hover:text-orange-600 transition-colors"><i class="fab fa-github mr-1"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project Card 3 -->
+                <div class="project-card bg-white text-slate-900 rounded-xl shadow-lg overflow-hidden transition-transform transform hover:scale-105 cursor-pointer" data-project='{"title": "Project Charlie", "description": "A personal finance dashboard to track spending and savings.", "role": "Backend Engineer", "technologies": ["Python", "Django", "PostgreSQL"], "image": "https://placehold.co/400x300/F8FAFC/1E293B?text=Project+Charlie"}'>
+                    <img src="https://placehold.co/400x300/F8FAFC/1E293B?text=Project+Charlie" alt="Project Charlie" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Project Charlie</h3>
+                        <p class="text-sm text-gray-700 mb-4">A personal finance dashboard to track spending and savings.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-orange-100 text-orange-600 text-xs px-2 py-1 rounded-full">Python</span>
+                            <span class="bg-orange-100 text-orange-600 text-xs px-2 py-1 rounded-full">Django</span>
+                            <span class="bg-orange-100 text-orange-600 text-xs px-2 py-1 rounded-full">PostgreSQL</span>
+                        </div>
+                        <div class="flex space-x-4">
+                            <a href="#" class="text-[#FB923C] hover:text-orange-600 transition-colors"><i class="fas fa-external-link-alt mr-1"></i> Live Demo</a>
+                            <a href="#" class="text-[#FB923C] hover:text-orange-600 transition-colors"><i class="fab fa-github mr-1"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project Card 4 -->
+                <div class="project-card bg-white text-slate-900 rounded-xl shadow-lg overflow-hidden transition-transform transform hover:scale-105 cursor-pointer" data-project='{"title": "Project Delta", "description": "A dynamic quiz generator for educational purposes.", "role": "Full-Stack Developer", "technologies": ["React", "Express.js", "MongoDB"], "image": "https://placehold.co/400x300/F8FAFC/1E293B?text=Project+Delta"}'>
+                    <img src="https://placehold.co/400x300/F8FAFC/1E293B?text=Project+Delta" alt="Project Delta" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Project Delta</h3>
+                        <p class="text-sm text-gray-700 mb-4">A dynamic quiz generator for educational purposes.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-orange-100 text-orange-600 text-xs px-2 py-1 rounded-full">React</span>
+                            <span class="bg-orange-100 text-orange-600 text-xs px-2 py-1 rounded-full">Express.js</span>
+                            <span class="bg-orange-100 text-orange-600 text-xs px-2 py-1 rounded-full">MongoDB</span>
+                        </div>
+                        <div class="flex space-x-4">
+                            <a href="#" class="text-[#FB923C] hover:text-orange-600 transition-colors"><i class="fas fa-external-link-alt mr-1"></i> Live Demo</a>
+                            <a href="#" class="text-[#FB923C] hover:text-orange-600 transition-colors"><i class="fab fa-github mr-1"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project Card 5 -->
+                <div class="project-card bg-white text-slate-900 rounded-xl shadow-lg overflow-hidden transition-transform transform hover:scale-105 cursor-pointer" data-project='{"title": "Project Echo", "description": "A simple blogging platform with a modern, clean UI.", "role": "UI/UX Designer & Developer", "technologies": ["Gatsby", "Tailwind CSS", "GraphQL"], "image": "https://placehold.co/400x300/F8FAFC/1E293B?text=Project+Echo"}'>
+                    <img src="https://placehold.co/400x300/F8FAFC/1E293B?text=Project+Echo" alt="Project Echo" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Project Echo</h3>
+                        <p class="text-sm text-gray-700 mb-4">A simple blogging platform with a modern, clean UI.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-orange-100 text-orange-600 text-xs px-2 py-1 rounded-full">Gatsby</span>
+                            <span class="bg-orange-100 text-orange-600 text-xs px-2 py-1 rounded-full">Tailwind CSS</span>
+                            <span class="bg-orange-100 text-orange-600 text-xs px-2 py-1 rounded-full">GraphQL</span>
+                        </div>
+                        <div class="flex space-x-4">
+                            <a href="#" class="text-[#FB923C] hover:text-orange-600 transition-colors"><i class="fas fa-external-link-alt mr-1"></i> Live Demo</a>
+                            <a href="#" class="text-[#FB923C] hover:text-orange-600 transition-colors"><i class="fab fa-github mr-1"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-12 md:py-24 bg-[#F8FAFC]">
+        <div class="container mx-auto px-6 lg:px-8">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-[#1E293B]">Let's Create Together</h2>
+            <div class="max-w-xl mx-auto space-y-8 text-center">
+                <p class="text-gray-700">I'm currently <span class="text-[#FB923C] font-semibold">available for new opportunities</span> and freelance projects. Let's connect and build something amazing!</p>
+                <!-- Contact Form -->
+                <form class="space-y-6">
+                    <input type="text" placeholder="Your Name" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#FB923C]">
+                    <input type="email" placeholder="Your Email" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#FB923C]">
+                    <textarea placeholder="Your Message" rows="5" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#FB923C]"></textarea>
+                    <button type="submit" class="w-full bg-[#FB923C] text-white py-3 rounded-lg font-bold hover:bg-orange-600 transition-colors">Send Message</button>
+                </form>
+                <!-- Social Links -->
+                <div class="flex justify-center space-x-6">
+                    <a href="https://github.com/johntester" target="_blank" class="text-slate-700 hover:text-[#FB923C] transition-colors"><i class="fab fa-github text-3xl"></i></a>
+                    <a href="https://linkedin.com/in/johntester" target="_blank" class="text-slate-700 hover:text-[#FB923C] transition-colors"><i class="fab fa-linkedin text-3xl"></i></a>
+                    <a href="mailto:john@gmail.com" class="text-slate-700 hover:text-[#FB923C] transition-colors"><i class="fas fa-envelope text-3xl"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[#1E293B] text-white py-8 text-center">
+        <div class="container mx-auto px-6 lg:px-8">
+            <p>&copy; 2024 Adityan.T.S. All Rights Reserved.</p>
+        </div>
+    </footer>
+    
+    <!-- Custom Modal/Message Box -->
+    <div id="projectModal" class="modal fixed inset-0 bg-gray-900 bg-opacity-75 flex items-center justify-center opacity-0 invisible p-4">
+        <div class="bg-white text-slate-900 p-8 rounded-xl shadow-lg max-w-lg w-full transform scale-95 transition-transform">
+            <h3 id="modalTitle" class="text-2xl font-bold mb-4"></h3>
+            <p id="modalDescription" class="mb-4 text-gray-700"></p>
+            <p id="modalRole" class="mb-2 text-gray-600"></p>
+            <p id="modalTech" class="mb-4 text-gray-600"></p>
+            <button onclick="closeModal()" class="w-full bg-[#FB923C] text-white py-2 rounded-lg font-bold hover:bg-orange-600 transition-colors">Close</button>
+        </div>
+    </div>
+
+    <script>
+        // Typing animation for the hero section
+        const textElement = document.getElementById('hero-typing-text');
+        const textToType = "Full-Stack Developer & Digital Problem Solver";
+        let i = 0;
+        let isDeleting = false;
+
+        function typeWriter() {
+            const currentText = textToType.substring(0, i);
+            textElement.textContent = currentText;
+
+            if (!isDeleting && i < textToType.length) {
+                i++;
+                setTimeout(typeWriter, 50);
+            } else if (isDeleting && i > 0) {
+                i--;
+                setTimeout(typeWriter, 25);
+            } else if (!isDeleting && i === textToType.length) {
+                // Pause at the end of the sentence
+                setTimeout(() => {
+                    isDeleting = true;
+                    typeWriter();
+                }, 2000); // 2-second pause
+            } else if (isDeleting && i === 0) {
+                isDeleting = false;
+                // Wait before starting to type again
+                setTimeout(typeWriter, 500);
+            }
+        }
+        
+        window.onload = function() {
+            typeWriter();
+        };
+
+        // Custom Modal Logic
+        const projectCards = document.querySelectorAll('.project-card');
+        const modal = document.getElementById('projectModal');
+        const modalTitle = document.getElementById('modalTitle');
+        const modalDescription = document.getElementById('modalDescription');
+        const modalRole = document.getElementById('modalRole');
+        const modalTech = document.getElementById('modalTech');
+
+        projectCards.forEach(card => {
+            card.addEventListener('click', () => {
+                const projectData = JSON.parse(card.getAttribute('data-project'));
+                modalTitle.textContent = projectData.title;
+                modalDescription.textContent = projectData.description;
+                modalRole.textContent = `Role: ${projectData.role}`;
+                modalTech.textContent = `Technologies: ${projectData.technologies.join(', ')}`;
+                
+                openModal();
+            });
+        });
+
+        function openModal() {
+            modal.style.opacity = '1';
+            modal.style.visibility = 'visible';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            modal.style.opacity = '0';
+            modal.style.visibility = 'hidden';
+            document.body.style.overflow = '';
+        }
+
+        // Close modal when clicking outside
+        window.addEventListener('click', (event) => {
+            if (event.target === modal) {
+                closeModal();
+            }
+        });
+    </script>
+</body>
+</html>
